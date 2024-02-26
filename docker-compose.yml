@@ -50,7 +50,7 @@ services:
       - cadvisor
 
   grafana:
-    image: grafana/grafana:latest
+    image: grafana/grafana:9.5.16-ubuntu
     volumes:
       - grafana-data:/var/lib/grafana
     environment:
