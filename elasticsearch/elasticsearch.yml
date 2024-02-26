@@ -1,0 +1,5 @@
+# elasticsearch/config/elasticsearch.yml
+xpack.security.enabled: false
+xpack.security.enrollment.enabled: false
+network.host: 0.0.0.0
+discovery.type: single-node

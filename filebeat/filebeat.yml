@@ -1,0 +1,15 @@
+filebeat.inputs:
+- type: log
+  enabled: true
+  paths:
+    - '/var/lib/docker/containers/*/*.log'
+    - '/var/host_logs/*.log'
+filebeat.config.modules:
+  path: ${path.config}/modules.d/*.yml
+  reload.enabled: false
+output.elasticsearch:
+  hosts: 'elasticsearch:9200'
+  username: "elastic"
+  password: "${ELASTIC_PASSWORD}"
+processors:
+  - add_docker_metadata: ~
